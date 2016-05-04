@@ -21,6 +21,7 @@ How to use
 1. Install the dependencies.
 2. Config your plot.ly for hosting (optional if you only want to save the html locally)
 3. Register Twitter Developer to get API tokens. [Here](https://apps.twitter.com) It's free and easy.
+4. Change the config file `auth_settings_example.py`, rename it to `auth_settings.py` and fill in your token and secret.
 4. Run Python scripts
 ```bash
 # this one get the tweets and save it to a csv file

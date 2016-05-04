@@ -58,7 +58,10 @@ Screenshot
 ---
 ![screen shot 2016-05-04 at 3 12 38 am](https://cloud.githubusercontent.com/assets/1504159/15012085/aa303114-11aa-11e6-8967-0cf84fd83b4c.png)
 
+Live Demo
+---
 
+https://winddweb.github.io/cgss-event-charts/
 
 Dependency
 ---

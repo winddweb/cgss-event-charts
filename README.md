@@ -4,7 +4,9 @@ cgss-event-charts
 Introduction
 ---
 This Python script is developed for Cinderella Girls Starlight Stage players.(yeah, this is a game)
-It will collect data from [@deresute_border](https://twitter.com/deresute_border) or [@cindere_border](https://twitter.com/cindere_border) who will keep updating current score borders and predictions for each tier.
+If you don't know what CGSS is probably you should not be here. Just in case you want to know what it is, check this [reddit](https://www.reddit.com/r/StarlightStage/comments/4h3eg7/event_megathread_live_groove_dance_burst_seizon/)
+
+What it does is that it will collect data from [@deresute_border](https://twitter.com/deresute_border) or [@cindere_border](https://twitter.com/cindere_border) who will keep updating current score borders and predictions for each tier.
 Then it can generate event score trending charts based on the data.
 
 Features

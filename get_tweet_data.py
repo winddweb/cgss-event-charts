@@ -15,7 +15,8 @@ def get_all_tweets(screen_name):
 
     api = tweepy.API(auth)
 
-    max_number = 400
+    # max_number = 400
+
     min_date = datetime(2016, 4, 29, 0, 00)
     max_date = datetime.today()
 

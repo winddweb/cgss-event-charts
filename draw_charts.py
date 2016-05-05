@@ -30,7 +30,7 @@ with open(sys.argv[1], 'r') as f:
         t_text = t_text.split('\n')
 
         if 'deresute_border' in sys.argv[1]:
-            chart_type = "Current Score"
+            chart_type = "Current_Score"
             if '最終結果' in t_text[0]:
                 title, r_2k, r_10k, r_20k, r_50k, r_100k, _, link = t_text
             else:
@@ -39,7 +39,7 @@ with open(sys.argv[1], 'r') as f:
             score_regex = r"：\d+（"
 
         if 'cindere_border' in sys.argv[1]:
-            chart_type = "Predicted Score"
+            chart_type = "Predicted_Score"
             title, date, r_2k, r_10k, r_20k, r_50k, r_100k, _ = t_text
             score_regex = r":\d+p"
 

@@ -26,6 +26,28 @@ How to use
 4. Change the config file `auth_settings_example.py`, rename it to `auth_settings.py` and fill in your token and secret.
 5. Run Python scripts
 
+One liner:
+
+`$ ./get_borderline.py [predict/border]`
+
+**Example**
+
+```bash
+$ ./get_borderline.py border
+200 tweets loaded
+tweets from: 2016-05-03 10:48:03
+400 tweets loaded
+tweets from: 2016-05-01 08:47:02
+600 tweets loaded
+466 of tweets recorded
+
+$ ./get_borderline.py predict
+163 tweets loaded
+4 of tweets recorded
+```
+
+**Run `get tweet data` and `draw charts` separately**
+
 ```bash
 # this one get the tweets and save it to a csv file
 

@@ -18,7 +18,7 @@ def get_all_tweets(screen_name):
     # max_number = 400
 
     min_date = datetime(2016, 4, 29, 0, 00)
-    max_date = datetime.today()
+    max_date = datetime.today() + datetime.timedelta(days=1) # to fix timezone difference between USA and Japan
 
     # min_date = datetime(2016, 4, 20, 0, 00)
     # max_date = datetime(2016, 4, 29, 0, 00)

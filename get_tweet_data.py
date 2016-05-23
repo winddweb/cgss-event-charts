@@ -80,6 +80,7 @@ def get_all_tweets(screen_name):
 
             alltweets = [tweet for tweet in alltweets if min_date < tweet.created_at < max_date]
             print("%s of tweets recorded" % len(alltweets))
+            print("tweets to: %s" % alltweets[0].created_at)
             break
 
     # outtweets = [[tweet.id_str, tweet.created_at, tweet.text.encode("utf-8")] for tweet in alltweets]

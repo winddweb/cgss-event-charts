@@ -6,7 +6,7 @@ import sh
 
 option = sys.argv[1] # predict or border
 
-get_tweet = sh.Command('/Users/windd/Documents/develop/@py/cgss-event-charts/get_tweet_data.py')
+get_tweet = sh.Command('./get_tweet_data.py')
 
 draw_chart = sh.Command('./draw_charts.py')
 

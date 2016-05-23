@@ -27,6 +27,7 @@ How to use
 5. Run Python scripts
 
 One liner:
+---
 
 `$ ./get_borderline.py [predict/border]`
 

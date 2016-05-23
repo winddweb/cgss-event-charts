@@ -94,4 +94,4 @@ with open(sys.argv[1], 'r') as f:
     fig = dict(data=data, layout=layout)
 
     # py.plot(fig, filename=chart_type + 'multiple-line') # save online on plot.ly, account required
-    pyof.plot(fig, filename='html_charts/' + chart_type + 'multiple-line.html')
+    pyof.plot(fig, filename='html_charts/' + chart_type + '_multiple-line.html')

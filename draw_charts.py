@@ -2,6 +2,7 @@
 
 import csv
 import sys
+import os
 import re
 import plotly.plotly as py
 import plotly.offline as pyof
@@ -94,4 +95,7 @@ with open(sys.argv[1], 'r') as f:
     fig = dict(data=data, layout=layout)
 
     # py.plot(fig, filename=chart_type + 'multiple-line') # save online on plot.ly, account required
+
+    os.makedirs("html_charts/", exist_ok=True)
+
     pyof.plot(fig, filename='html_charts/' + chart_type + '_multiple-line.html')

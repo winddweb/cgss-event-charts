@@ -29,7 +29,7 @@ How to use
 One liner:
 ---
 
-`$ ./get_borderline.py [predict/border]`
+`$ ./get_borderline.py [predict/border/all]`
 
 **Example**
 
@@ -45,6 +45,20 @@ tweets from: 2016-05-01 08:47:02
 $ ./get_borderline.py predict
 163 tweets loaded
 4 of tweets recorded
+
+# get both at the same time, use `all` as parameter
+$ ./get_borderline.py all
+200 tweets loaded
+tweets from: 2016-06-04 05:17:03
+400 tweets loaded
+tweets from: 2016-06-02 03:17:02
+600 tweets loaded
+572 of tweets recorded
+tweets to: 2016-06-06 07:03:03
+
+182 tweets loaded
+5 of tweets recorded
+tweets to: 2016-06-05 14:13:47
 ```
 
 **Run `get tweet data` and `draw charts` separately**

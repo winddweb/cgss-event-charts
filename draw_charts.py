@@ -12,8 +12,8 @@ x_values = []
 y_values_2 = []
 y_values_10 = []
 y_values_20 = []
-y_values_50 = []
-y_values_100 = []
+y_values_60 = []
+y_values_120 = []
 chart_type = ""
 
 def append_matched(match, y_list):
@@ -33,29 +33,31 @@ with open(sys.argv[1], 'r') as f:
         if 'deresute_border' in sys.argv[1]:
             chart_type = "Current_Score"
             if '最終結果' in t_text[0]:
-                title, r_2k, r_10k, r_20k, r_50k, r_100k, _, link = t_text
+                title, r_2k, r_10k, r_20k, r_60k, r_120k, _, link = t_text
+            elif len(t_text) is not 9:
+                print(t_text)
             else:
-                title, r_2k, r_10k, r_20k, r_50k, r_100k, _, date, link = t_text
+                title, r_2k, r_10k, r_20k, r_60k, r_120k, _, date, link = t_text
 
             score_regex = r"：\d+（"
 
         if 'cindere_border' in sys.argv[1]:
             chart_type = "Predicted_Score"
-            title, date, r_2k, r_10k, r_20k, r_50k, r_100k, _ = t_text
+            title, date, r_2k, r_10k, r_20k, r_60k, r_120k, _ = t_text
             score_regex = r":\d+p"
 
         match_2 = re.search(score_regex, r_2k)
         match_10 = re.search(score_regex, r_10k)
         match_20 = re.search(score_regex, r_20k)
-        match_50 = re.search(score_regex, r_50k)
-        match_100 = re.search(score_regex, r_100k)
+        match_60 = re.search(score_regex, r_60k)
+        match_120 = re.search(score_regex, r_120k)
 
         x_values.append(t_date)
         append_matched(match_2, y_values_2)
         append_matched(match_10, y_values_10)
         append_matched(match_20, y_values_20)
-        append_matched(match_50, y_values_50)
-        append_matched(match_100, y_values_100)
+        append_matched(match_60, y_values_60)
+        append_matched(match_120, y_values_120)
 
 
     trace_2 = go.Scatter(
@@ -74,22 +76,27 @@ with open(sys.argv[1], 'r') as f:
         y = y_values_20,
         name = "20000"
     )
-    trace_50 = go.Scatter(
+    trace_60 = go.Scatter(
         x = x_values,
-        y = y_values_50,
-        name = "50000"
+        y = y_values_60,
+        name = "60000"
     )
-    trace_100 = go.Scatter(
+    trace_120 = go.Scatter(
         x = x_values,
-        y = y_values_100,
-        name = "100000"
+        y = y_values_120,
+        name = "120000"
     )
 
-    data = [trace_2, trace_10, trace_20, trace_50, trace_100]
+    data = [trace_2, trace_10, trace_20, trace_60, trace_120]
 
     layout = dict(title = 'Event Score Trending @ CGSS ' + chart_type,
                   xaxis = dict(title = 'Date'),
                   yaxis = dict(title = 'Scores'),
+                  showlegend=True,
+                  legend = dict(
+                    orientation= "h",
+                    x=100,
+                    y=1),
                   )
 
     fig = dict(data=data, layout=layout)

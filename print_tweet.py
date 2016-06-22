@@ -16,8 +16,8 @@ def get_all_tweets(screen_name, max_number):
 
     # max_number = 400
 
-    # min_date = datetime(2016, 4, 29, 0, 00)
-    # max_date = datetime.today() + timedelta(days=1) # to fix timezone
+    min_date = datetime(2016, 6, 20, 0, 00)
+    max_date = datetime.today() + timedelta(days=1) # to fix timezone
 
     def stop_get_tweets(alltweets):
         stop = True

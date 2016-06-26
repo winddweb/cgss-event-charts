@@ -34,16 +34,22 @@ with open(sys.argv[1], 'r') as f:
             chart_type = "Current_Score"
             if '最終結果' in t_text[0]:
                 title, r_2k, r_10k, r_20k, r_60k, r_120k, _, link = t_text
-            elif len(t_text) is not 9:
-                print(t_text)
-            else:
+            elif len(t_text) is 9:
                 title, r_2k, r_10k, r_20k, r_60k, r_120k, _, date, link = t_text
+            else:
+                print(t_text)
+                continue
 
             score_regex = r"：\d+（"
 
         if 'cindere_border' in sys.argv[1]:
             chart_type = "Predicted_Score"
-            title, date, r_2k, r_10k, r_20k, r_60k, r_120k, _ = t_text
+            if len(t_text) is 8:
+                title, date, r_2k, r_10k, r_20k, r_60k, r_120k, _ = t_text
+            else:
+                print(t_text)
+                continue
+
             score_regex = r":\d+p"
 
         match_2 = re.search(score_regex, r_2k)

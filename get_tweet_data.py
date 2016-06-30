@@ -20,7 +20,7 @@ def get_all_tweets(screen_name):
 
     # max_number = 400
 
-    min_date = datetime(2016, 6, 20, 0, 00)
+    min_date = datetime(2016, 6, 30, 0, 00)
     max_date = datetime.today() + timedelta(days=1) # to fix timezone difference between USA and Japan
 
     # min_date = datetime(2016, 4, 20, 0, 00)
@@ -80,7 +80,10 @@ def get_all_tweets(screen_name):
 
             alltweets = [tweet for tweet in alltweets if min_date < tweet.created_at < max_date]
             print("%s of tweets recorded" % len(alltweets))
-            print("tweets to: %s" % alltweets[0].created_at)
+            if len(alltweets) is 0:
+                print("No usable tweet data in the range.")
+            else:
+                print("tweets to: %s" % alltweets[0].created_at)
             break
 
     # outtweets = [[tweet.id_str, tweet.created_at, tweet.text.encode("utf-8")] for tweet in alltweets]

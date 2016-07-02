@@ -17,11 +17,6 @@ y_values_120 = []
 chart_type = ""
 filename = sys.argv[1]
 
-def log_csv_rows(reader):
-    row_count = 0
-    row_count = sum(1 for row in reader)
-    print("row count:", row_count)
-
 def append_matched(match, y_list):
     if match:
         score = match.group().replace('：','').replace('（', '').replace(':', '').replace('p', '')
@@ -31,11 +26,8 @@ def append_matched(match, y_list):
 with open(filename, 'r') as f:
     reader = csv.reader(f, delimiter=',')
 
-    log_csv_rows(reader)
-
-    for row in reader:
+    for row_count, row in enumerate(reader):
         t_id, t_date, t_text = row
-
         t_text = t_text.split('\n')
 
         if 'deresute_border' in filename:
@@ -73,6 +65,7 @@ with open(filename, 'r') as f:
         append_matched(match_60, y_values_60)
         append_matched(match_120, y_values_120)
 
+    # Define traces
     trace_2 = go.Scatter(
         x = x_values,
         y = y_values_2,

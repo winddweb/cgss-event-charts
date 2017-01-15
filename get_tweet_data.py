@@ -11,16 +11,19 @@ from auth_setting import auth_setting
 # TODO: add Event title
 # TODO: add file save options
 
-def get_all_tweets(screen_name):
+def get_all_tweets(sys_argv):
 
+    # twitter auth
     auth = tweepy.OAuthHandler(auth_setting["consumer_key"], auth_setting["consumer_secret"])
     auth.set_access_token(auth_setting["access_token"], auth_setting["access_token_secret"])
 
     api = tweepy.API(auth)
 
+    screen_name = sys_argv[0]
+    # TODO: add getopt package, test params for comma separated strings.
     # max_number = 400
 
-    min_date = datetime(2016, 6, 30, 0, 00)
+    min_date = datetime(2016, 10, 19, 0, 00)
     max_date = datetime.today() + timedelta(days=1) # to fix timezone difference between USA and Japan
 
     # min_date = datetime(2016, 4, 20, 0, 00)
@@ -100,6 +103,9 @@ def get_all_tweets(screen_name):
 
 if __name__ == '__main__':
     #pass in the username of the account you want to download
-    screen_name = sys.argv[1] if len(sys.argv) > 1 else "deresute_border"
-    get_all_tweets(screen_name)
+    # TODO: test the new arguments
+    # screen_name = sys.argv[1] if len(sys.argv) > 1 else "deresute_border"
+    # get_all_tweets(screen_name)
+
+    get_all_tweets(sys.argv[1:])
 
